@@ -1,16 +1,33 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName.Models;
+using Shapes.Models;
 
-namespace ProjectName.Tests
+namespace Shapes.Tests
 {
     [TestClass]
-    public class ClassNameTest
+    public class RectangleTests
     {
         [TestMethod]
-        public void MethodName_Spec_ExpectedOutput()
+        public void Rectangle_GetArea_AreaOfRectangle()
         {
-            ClassName instanceName = new ClassName();
-            Assert.AreEqual(ExpectedOutput, instanceName.MethodName(inputHere));
+            Rectangle newRectangle = new Rectangle(4, 4);
+            int result = newRectangle.GetArea();
+            Assert.AreEqual(result, 16);
+        }
+
+        [TestMethod]
+        public void Rectangle_IsSquare_True()
+        {
+            Rectangle newRectangle = new Rectangle(4, 4);
+            bool result = newRectangle.IsSquare();
+            Assert.AreEqual(result, true);
+        }
+
+        [TestMethod]
+        public void Rectangle_IsSquare_False()
+        {
+            Rectangle newRectangle = new Rectangle(4, 5);
+            bool result = newRectangle.IsSquare();
+            Assert.AreEqual(result, false);
         }
     }
 }

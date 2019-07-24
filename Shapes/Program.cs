@@ -1,5 +1,5 @@
 using System;
-using NAMESPACE;
+using Shapes.Models;
 
 class Program
 {
